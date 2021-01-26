@@ -1,11 +1,8 @@
-require("dotenv").config("./env");
 const ethers = require("ethers");
-const NFT_CONTRACT_ADDRESS = process.env.NFT_CONTRACT_ADDRESS;
-const OWNER_ADDRESS = process.env.OWNER_ADDRESS;
-const PRIVATE_KEY = process.env.PRIVATE_KEY.startsWith("0x")
-  ? process.env.PRIVATE_KEY
-  : "0x" + process.env.PRIVATE_KEY;
-const NETWORK = process.env.NETWORK;
+const NFT_CONTRACT_ADDRESS = "0xa4e2a202d2463eEc429E1443546e7d337Ec77D8d";
+const OWNER_ADDRESS = "0xc2940e20CbE41f9b4CedF5B83aA55C3f28376004";
+const PRIVATE_KEY = "3c660dd4aa1b30ff89f04ee311cd966266002fe91b14a4a79aaf897d755bc544"
+const NETWORK = "rinkeby";
 const NUM_CREATURES = 1;
 
 if (!PRIVATE_KEY || !OWNER_ADDRESS || !NETWORK) {

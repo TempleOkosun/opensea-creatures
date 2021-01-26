@@ -17,14 +17,9 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
-require('dotenv').config("./env")
-const ethers = require('ethers');
-const HDWalletProvider = require('truffle-hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
-const privateKey = process.env.PRIVATE_KEY;
+let HDWalletProvider = require("truffle-hdwallet-provider");
+let seedPhrase = "latin pull improve wine bind turn short glow normal gain soccer plate";
+
 
 module.exports = {
   /**
@@ -72,7 +67,7 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
     rinkeby: {
-      provider: () => new HDWalletProvider(privateKey, (new ethers.providers.InfuraProvider("rinkeby")).connection.url),
+      provider: () => new HDWalletProvider(seedPhrase, "https://rinkeby.infura.io/v3/0c9e9f68ec0d40858fd7260933dc4fa1"),
       network_id: 4,       // Rinkeby's id
       from: process.env.OWNER_ADDRESS,
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
